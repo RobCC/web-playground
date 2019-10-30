@@ -1,0 +1,23 @@
+{
+  "name": "web-playground",
+  "version": "0.0.0",
+  "description": "A web playground",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobCC/web-playground.git"
+  },
+  "author": "robcc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobCC/web-playground/issues"
+  },
+  "homepage": "https://github.com/RobCC/web-playground#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
