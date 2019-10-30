@@ -43,6 +43,28 @@ module.exports = ({ NODE_ENV }) => {
         {
           test: /\.(sa|sc|c)ss$/,
           use: stylingLoaders
+        },
+        {
+          test: /\.(png|pje?g|gif|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outputPath: 'images'
+              }
+            }
+          ]
+        }
+        {
+          test: /\.(woff|woff2|tff|otf|eot)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outputPath: 'fonts'
+              }
+            }
+          ]
         }
       ]
     },
