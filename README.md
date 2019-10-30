@@ -1,3 +1,3 @@
 # web-playground
 
-A react playground
+A react playground.
