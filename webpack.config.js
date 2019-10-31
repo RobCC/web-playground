@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ENV_DEV = 'development';
 const ENV_PROD = 'production';
@@ -76,6 +77,9 @@ module.exports = ({ NODE_ENV }) => {
         }
       ]
     },
-    plugins: [new MiniCssExtractPlugin({ filename: "bundle.css" })]
+    plugins: [
+      new HtmlWebpackPlugin(),
+      new MiniCssExtractPlugin({ filename: "bundle.css" })
+    ]
   };
 };
