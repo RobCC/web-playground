@@ -4,6 +4,7 @@
   "description": "A web playground",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --open --env.NODE_ENV=development",
     "build": "cross-env NODE_ENV=production webpack --env.NODE_ENV=production",
     "build:dev": "cross-env NODE_ENV=development webpack --env.NODE_ENV=development"
   },
@@ -33,6 +34,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
   }
 }

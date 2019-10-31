@@ -4,9 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ENV_DEV = 'development';
 const ENV_PROD = 'production';
 
-module.exports = ({ NODE_ENV }) => {
-  console.log(`Environment: ${NODE_ENV}`);
-
+const setStylingLoaders = NODE_ENV => {
   const stylingLoaders = [
     { loader: 'css-loader' },
     { loader: 'postcss-loader' },
@@ -24,12 +22,22 @@ module.exports = ({ NODE_ENV }) => {
     stylingLoaders.unshift({ loader: 'style-loader' });
   }
 
+  return stylingLoaders;
+};
+
+module.exports = ({ NODE_ENV }) => {
+  console.log(`Environment: ${NODE_ENV}`);
+
   return {
     mode: 'development',
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js'
+    },
+    devServer: {
+      contentBase: './dist',
+      hot: true,
     },
     module: {
       rules: [
@@ -42,7 +50,7 @@ module.exports = ({ NODE_ENV }) => {
         },
         {
           test: /\.(sa|sc|c)ss$/,
-          use: stylingLoaders
+          use: setStylingLoaders(NODE_ENV)
         },
         {
           test: /\.(png|pje?g|gif|svg)$/,
@@ -54,7 +62,7 @@ module.exports = ({ NODE_ENV }) => {
               }
             }
           ]
-        }
+        },
         {
           test: /\.(woff|woff2|tff|otf|eot)$/,
           use: [
