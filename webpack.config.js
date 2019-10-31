@@ -31,7 +31,7 @@ module.exports = ({ NODE_ENV }) => {
   console.log(`Environment: ${NODE_ENV}`);
 
   return {
-    mode: 'development',
+    mode: NODE_ENV,
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -48,7 +48,6 @@ module.exports = ({ NODE_ENV }) => {
         const port = server.listeningApp.address().port;
 
         console.log(`Listening on: ${port}`);
-        console.log(`${server}`);
       },
     },
     module: {
