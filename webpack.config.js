@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const ENV_DEV = 'development';
 const ENV_PROD = 'production';
@@ -37,8 +38,18 @@ module.exports = ({ NODE_ENV }) => {
       filename: 'bundle.js'
     },
     devServer: {
-      contentBase: './dist',
+      contentBase: path.resolve(__dirname, 'dist'),
+      port: 1234,
       hot: true,
+      noInfo: true,
+      open: false,
+      overlay: true,
+      onListening: server => {
+        const port = server.listeningApp.address().port;
+
+        console.log(`Listening on: ${port}`);
+        console.log(`${server}`);
+      },
     },
     module: {
       rules: [
@@ -78,6 +89,7 @@ module.exports = ({ NODE_ENV }) => {
       ]
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin(),
       new MiniCssExtractPlugin({ filename: "bundle.css" })
     ]

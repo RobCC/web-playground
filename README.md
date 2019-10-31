@@ -9,3 +9,11 @@ https://stackoverflow.com/questions/48476373/whats-the-difference-when-configuri
 https://webpack.js.org/guides/environment-variables/
 
 https://webpack.js.org/guides/development/
+
+Dev Server Options
+https://webpack.js.org/configuration/dev-server/
+
+TO READ
+
+https://github.com/gaearon/react-hot-loader
+
