@@ -1,16 +1,15 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 
-import { Home } from '../../views/Home/Home';
-import { About } from '../../views/About/About';
+import { Home, About } from '../../pages';
 
 export const Routes = () => (
-  <>
+  <Switch>
     <Route path="/" exact>
       <Home />
     </Route>
     <Route path="/about" exact>
       <About />
     </Route>
-  </>
+  </Switch>
 );

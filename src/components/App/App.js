@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import { Routes } from "../Routes/Routes";
 
@@ -17,9 +17,7 @@ export const App = (
     </nav>
 
     <div>
-      <Switch>
-        <Routes />
-      </Switch>
+      <Routes />
     </div>
   </Router>
 );
