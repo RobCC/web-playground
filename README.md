@@ -4,6 +4,11 @@ A react playground.
 
 ## Webpack
 
+### Tools
+
+- [Terminal colors](https://github.com/chalk/chalk)
+- [HTML Webpack template](https://github.com/jaketrent/html-webpack-template)
+
 ### Info
 
 - [Webpack config vs .babelrc](https://stackoverflow.com/questions/48476373/whats-the-difference-when-configuring-webpack-babel-loader-vs-configuring-it-wit/48485578#48485578)
