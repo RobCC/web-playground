@@ -7,6 +7,7 @@ A react playground.
 ### Tools
 
 - [Terminal colors](https://github.com/chalk/chalk)
+- [HTML Webpack template](https://github.com/jaketrent/html-webpack-template)
 
 ### Info
 
