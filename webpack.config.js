@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ENV_DEV = 'development';
 const ENV_PROD = 'production';
 
+const isDev = env => env === ENV_DEV;
+
 const setStylingLoaders = NODE_ENV => {
   const stylingLoaders = [
     { loader: 'css-loader' },
@@ -37,6 +39,7 @@ module.exports = ({ NODE_ENV }) => {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js'
     },
+    devtool: isDev(NODE_ENV) ? 'eval-source-map' : false,
     devServer: {
       contentBase: path.resolve(__dirname, 'dist'),
       port: 1234,
