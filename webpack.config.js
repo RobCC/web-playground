@@ -37,7 +37,8 @@ module.exports = ({ NODE_ENV }) => {
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/',
     },
     devtool: isDev(NODE_ENV) ? 'eval-source-map' : false,
     devServer: {
@@ -47,6 +48,7 @@ module.exports = ({ NODE_ENV }) => {
       noInfo: true,
       open: false,
       overlay: true,
+      historyApiFallback: true,
       onListening: server => {
         const port = server.listeningApp.address().port;
 
