@@ -48,6 +48,7 @@ module.exports = ({ NODE_ENV }) => {
       noInfo: true,
       open: false,
       overlay: true,
+      historyApiFallback: true,
       onListening: server => {
         const port = server.listeningApp.address().port;
 
