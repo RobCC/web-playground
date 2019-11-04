@@ -1,17 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
-import { Routes } from "../Routes/Routes";
+import Routes from '../Routes/Routes';
 
-export const App = (
+const App = (
   <Router>
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/" exact>Home</NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink to="/about">About</NavLink>
         </li>
       </ul>
     </nav>
@@ -21,3 +21,5 @@ export const App = (
     </div>
   </Router>
 );
+
+export default App;
