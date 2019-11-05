@@ -55,8 +55,7 @@ module.exports = {
     'indentation': 2,
     'max-empty-lines': 2,
     'no-eol-whitespace': true,
-    'no-missing-end-of-source-newline': true,
     'no-empty-first-line': true,
-    'at-else-if-parentheses-space-before': 'always',
+    'scss/at-else-if-parentheses-space-before': 'always',
   }
 };
