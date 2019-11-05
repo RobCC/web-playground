@@ -63,7 +63,7 @@ module.exports = ({ NODE_ENV }) => {
         formatter: StyleLintFormatter
       }),
       new HtmlWebpackPlugin(),
-      new MiniCssExtractPlugin({ filename: "index.css" })
+      new MiniCssExtractPlugin({ filename: 'index.css' })
     ]
   };
 };
