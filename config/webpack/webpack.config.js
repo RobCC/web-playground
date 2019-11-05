@@ -5,11 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const setStyleLoaders = require('./style-loaders');
 const devServer = require('./dev-server');
-const { DEV, PROD, ROOT, BUILD_PATH, CONFIG_PATH } = require('./constants');
+const { DEV, ROOT, BUILD_PATH } = require('./constants');
 
 module.exports = ({ NODE_ENV }) => {
-  console.log(`Environment: ${NODE_ENV}`);
-
   return {
     mode: NODE_ENV,
     entry: './src/index.js',
@@ -18,7 +16,7 @@ module.exports = ({ NODE_ENV }) => {
     devServer,
     output: {
       path: BUILD_PATH,
-      filename: 'bundle.js',
+      filename: 'index.js',
       publicPath: '/',
     },
     module: {
@@ -61,7 +59,7 @@ module.exports = ({ NODE_ENV }) => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin(),
-      new MiniCssExtractPlugin({ filename: "bundle.css" })
+      new MiniCssExtractPlugin({ filename: "index.css" })
     ]
   };
 };
