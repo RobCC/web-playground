@@ -11,12 +11,17 @@ const isDev = env => env === ENV_DEV;
 const setStylingLoaders = NODE_ENV => {
   const stylingLoaders = [
     { loader: 'css-loader' },
-    { loader: 'postcss-loader' },
+    {
+      loader: 'postcss-loader',
+      options: {
+        config: { path: path.resolve(__dirname, './postcss.config.js') }
+      },
+    },
     {
       loader: 'sass-loader',
       options: {
         implementation: require('sass')
-      }
+      },
     }
   ];
 
@@ -35,14 +40,15 @@ module.exports = ({ NODE_ENV }) => {
   return {
     mode: NODE_ENV,
     entry: './src/index.js',
+    devtool: isDev(NODE_ENV) ? 'eval-source-map' : false,
+    context: path.resolve(__dirname, '../'),
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../build'),
       filename: 'bundle.js',
       publicPath: '/',
     },
-    devtool: isDev(NODE_ENV) ? 'eval-source-map' : false,
     devServer: {
-      contentBase: path.resolve(__dirname, 'dist'),
+      contentBase: path.resolve(__dirname, '../build'),
       port: 1234,
       hot: true,
       noInfo: true,
