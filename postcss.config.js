@@ -7,4 +7,10 @@ if (env === 'production') {
       require('cssnano')
     ]
   };
+} else {
+  module.exports = {
+    plugins: [
+      require('stylelint')
+    ]
+  };
 }

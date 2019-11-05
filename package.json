@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --color --env.NODE_ENV=development",
     "build": "cross-env NODE_ENV=production webpack --env.NODE_ENV=production",
-    "build:dev": "cross-env NODE_ENV=development webpack --env.NODE_ENV=development"
+    "stylelint": "stylelint '**/*.scss'; exit 0"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "sass": "^1.23.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "stylelint": "^11.1.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
