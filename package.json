@@ -4,9 +4,10 @@
   "description": "A web playground",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --color --env.NODE_ENV=development --config config/webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --env.NODE_ENV=production --config config/webpack.config.js",
-    "stylelint": "stylelint '**/*.scss' --config config/stylelint.config.js; exit 0"
+    "start": "webpack-dev-server --open --color --env.NODE_ENV=development --config config/webpack/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --env.NODE_ENV=production --config config/webpack/webpack.config.js",
+    "stylelint": "stylelint 'src/**/*.scss' --config config/stylelint.config.js; exit 0",
+    "lint": "npm run stylelint"
   },
   "repository": {
     "type": "git",
