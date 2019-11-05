@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const setStyleLoaders = require('./style-loaders');
-const devServer = require('./dev-server');
 const { DEV, ROOT_PATH, SRC_PATH, BUILD_PATH } = require('./constants');
 
 module.exports = ({ NODE_ENV }) => {
@@ -13,7 +12,7 @@ module.exports = ({ NODE_ENV }) => {
     entry: SRC_PATH + '/index.js',
     devtool: NODE_ENV === DEV ? 'eval-source-map' : false,
     context: ROOT_PATH,
-    devServer,
+    devServer: require('./dev-server'),
     output: {
       path: BUILD_PATH,
       filename: 'index.js',
