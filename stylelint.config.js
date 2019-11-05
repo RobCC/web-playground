@@ -1,4 +1,7 @@
 module.exports = {
+  plugins: [
+    'stylelint-scss'
+  ],
   rules: {
     'color-no-invalid-hex': true,
     'font-family-no-duplicate-names': true,
@@ -54,6 +57,6 @@ module.exports = {
     'no-eol-whitespace': true,
     'no-missing-end-of-source-newline': true,
     'no-empty-first-line': true,
-
+    'at-else-if-parentheses-space-before': 'always',
   }
 };
