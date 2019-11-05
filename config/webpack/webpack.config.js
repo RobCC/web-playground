@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const StyleLintFormatter = require('stylelint-formatter-pretty');
 
 const setStyleLoaders = require('./style-loaders');
 const { DEV, ROOT_PATH, SRC_PATH, BUILD_PATH } = require('./constants');
@@ -57,6 +59,9 @@ module.exports = ({ NODE_ENV }) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new StyleLintPlugin({
+        formatter: StyleLintFormatter
+      }),
       new HtmlWebpackPlugin(),
       new MiniCssExtractPlugin({ filename: "index.css" })
     ]
