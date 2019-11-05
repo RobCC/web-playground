@@ -5,14 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const setStyleLoaders = require('./style-loaders');
 const devServer = require('./dev-server');
-const { DEV, ROOT, BUILD_PATH } = require('./constants');
+const { DEV, ROOT_PATH, SRC_PATH, BUILD_PATH } = require('./constants');
 
 module.exports = ({ NODE_ENV }) => {
   return {
     mode: NODE_ENV,
-    entry: './src/index.js',
+    entry: SRC_PATH + '/index.js',
     devtool: NODE_ENV === DEV ? 'eval-source-map' : false,
-    context: ROOT,
+    context: ROOT_PATH,
     devServer,
     output: {
       path: BUILD_PATH,

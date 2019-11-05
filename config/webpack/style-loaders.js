@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { PROD, ROOT, CONFIG_PATH } = require('./constants');
+const { PROD, ROOT_PATH, CONFIG_PATH } = require('./constants');
 
 module.exports = NODE_ENV => {
 
