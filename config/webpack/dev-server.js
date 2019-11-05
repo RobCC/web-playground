@@ -31,8 +31,7 @@ module.exports = {
     outputPath: false,
     publicPath: false,
     usedExports: false,
-    version: false,
-    warnings: false,
+    version: false
   },
   onListening: server => {
     const PORT = server.listeningApp.address().port;

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       Home page.
-      <Input type="text" />
+      <Input inputType="textarea" type="text" name="test" placeholder="HELP" />
     </div>
   );
 };
