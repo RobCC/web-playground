@@ -1,28 +1,30 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Sass = require('sass');
 
-const { PROD, ROOT_PATH, CONFIG_PATH } = require('./constants');
+const { PROD, CONFIG_PATH } = require('./constants');
 
-module.exports = NODE_ENV => {
+module.exports = (NODE_ENV) => {
   const stylingLoaders = [
     {
       loader: 'css-loader',
       options: {
         importLoaders: true,
+        localsConvention: 'camelCase',
         modules: true,
-      }
+      },
     },
     {
       loader: 'postcss-loader',
       options: {
         config: { path: `${CONFIG_PATH}/postcss.config.js` },
-      }
+      },
     },
     {
       loader: 'sass-loader',
       options: {
-        implementation: require('sass')
-      }
-    }
+        implementation: Sass,
+      },
+    },
   ];
 
   if (NODE_ENV === PROD) {
