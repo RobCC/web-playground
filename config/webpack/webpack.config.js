@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const StyleLintFormatter = require('stylelint-formatter-pretty');
+const EsLintFormatter = require('eslint-formatter-pretty');
 
 const setStyleLoaders = require('./style-loaders');
 const {
@@ -28,7 +29,12 @@ module.exports = ({ NODE_ENV }) => ({
         exclude: /(node_modules)/,
         use: [
           { loader: 'babel-loader' },
-          { loader: 'eslint-loader' },
+          {
+            loader: 'eslint-loader',
+            options: {
+              formatter: EsLintFormatter,
+            },
+          },
         ],
       },
       {

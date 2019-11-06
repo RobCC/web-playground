@@ -13,12 +13,14 @@ module.exports = {
   open: false,
   overlay: false,
   hot: true,
+  clientLogLevel: 'silent',
   // noInfo: true,
   historyApiFallback: true,
   stats: {
     all: undefined,
     assets: false,
     children: false,
+    moduleTrace: false,
     chunk: false,
     chunkGroups: false,
     chunkModules: false,
@@ -32,7 +34,7 @@ module.exports = {
     outputPath: false,
     publicPath: false,
     usedExports: false,
-    version: false
+    version: false,
   },
   onListening: (server) => {
     const PORT = server.listeningApp.address().port;
