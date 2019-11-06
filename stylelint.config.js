@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    'stylelint-scss'
+    'stylelint-scss',
   ],
   rules: {
     'color-no-invalid-hex': true,
@@ -32,7 +32,6 @@ module.exports = {
     'value-keyword-case': 'lower',
     'property-case': 'lower',
     'declaration-bang-space-after': 'never',
-    'declaration-bang-space-after': 'never',
     'declaration-colon-space-after': 'always',
     'declaration-colon-space-before': 'never',
     'declaration-empty-line-before': 'never',
@@ -47,14 +46,13 @@ module.exports = {
     'block-opening-brace-space-after': 'always-single-line',
     'selector-attribute-quotes': 'always',
     'selector-attribute-brackets-space-inside': 'always',
-    'selector-attribute-quotes': 'always',
     'selector-pseudo-class-case': 'lower',
     'selector-type-case': 'lower',
     'comment-whitespace-inside': 'always',
-    'indentation': 2,
+    indentation: 2,
     'max-empty-lines': 2,
     'no-eol-whitespace': true,
     'no-empty-first-line': true,
     'scss/at-else-if-parentheses-space-before': 'always',
-  }
+  },
 };
