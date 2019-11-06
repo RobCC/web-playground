@@ -22,7 +22,7 @@ module.exports = {
     'declaration-block-semicolon-space-before': 'never',
     'declaration-block-semicolon-space-after': 'always-single-line',
     'declaration-block-trailing-semicolon': 'always',
-    'rule-empty-line-before': 'always',
+    'rule-empty-line-before': null,
     'block-closing-brace-space-after': 'always-single-line',
     'block-closing-brace-space-before': 'always-single-line',
     'block-opening-brace-space-before': 'always-single-line',
