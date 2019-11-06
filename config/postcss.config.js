@@ -1,3 +1,7 @@
+const Autoprefixer = require('autoprefixer');
+const CssNano = require('cssnano');
+const Stylelint = require('stylelint');
+
 const { PROD } = require('./webpack/constants');
 
 const env = process.env.NODE_ENV;
@@ -5,14 +9,14 @@ const env = process.env.NODE_ENV;
 if (env === PROD) {
   module.exports = {
     plugins: [
-      require('autoprefixer'),
-      require('cssnano')
-    ]
+      Autoprefixer,
+      CssNano,
+    ],
   };
 } else {
   module.exports = {
     plugins: [
-      require('stylelint')
-    ]
+      Stylelint,
+    ],
   };
 }
