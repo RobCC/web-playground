@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
 
-import styles from './index.scss';
+import './index.scss';
 
 const insertRoot = () => {
   const root = document.createElement('div');
