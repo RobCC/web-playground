@@ -8,13 +8,13 @@ const Input = ({ label = '', inputType, ...restProps }) => {
 
   switch (inputType) {
     case 'input':
-      inputElement = <input className={styles.input} {...restProps} />;
+      inputElement = <input className={styles.myInput} {...restProps} />;
       break;
     case 'textarea':
-      inputElement = <textarea className={styles.input} {...restProps} />;
+      inputElement = <textarea className={styles.myInput} {...restProps} />;
       break;
     default:
-      inputElement = <input className={styles.input} {...restProps} />;
+      inputElement = <input className={styles.myInput} {...restProps} />;
   }
 
   return (
