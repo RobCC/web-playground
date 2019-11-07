@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './components/App/App';
-import reducer from './store/reducer';
+import modules from './store/modules';
 
 import './index.scss';
 
@@ -17,7 +17,12 @@ const insertRoot = () => {
   return root;
 };
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+  ctr: modules.counter.reducer,
+  res: modules.results.reducer,
+});
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>

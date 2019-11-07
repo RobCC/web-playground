@@ -24,6 +24,8 @@
   "homepage": "https://github.com/RobCC/web-playground#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "autoprefixer": "^9.7.0",
