@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Sass = require('sass');
 
-const { PROD, CONFIG_PATH } = require('./constants');
+const { DEV, PROD, CONFIG_PATH } = require('./constants');
 
 module.exports = (NODE_ENV) => {
   const stylingLoaders = [
@@ -10,7 +10,12 @@ module.exports = (NODE_ENV) => {
       options: {
         importLoaders: true,
         localsConvention: 'camelCase',
-        modules: true,
+        sourceMap: NODE_ENV === DEV,
+        modules: {
+          localIdentName: NODE_ENV === PROD
+            ? '[name]_[local]--[hash:base64:5]'
+            : '[name]_[local]--[hash:base64:2]',
+        },
       },
     },
     {
