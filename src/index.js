@@ -1,10 +1,9 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './components/App/App';
-import modules from './store/modules';
+import store from './store/store';
 
 import './index.scss';
 
@@ -16,13 +15,6 @@ const insertRoot = () => {
 
   return root;
 };
-
-const rootReducer = combineReducers({
-  ctr: modules.counter.reducer,
-  res: modules.results.reducer,
-});
-
-const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
