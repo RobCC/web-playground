@@ -59,7 +59,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onIncrement: () => dispatch({ type: modules.counter.actions.INC }),
   addToCounter: () => dispatch({ type: modules.counter.actions.ADD, value: 10 }),
-  onSaveResult: (result) => dispatch({ type: modules.results.actions.SAVE_RESULT, result }),
+  onSaveResult: (result) => dispatch(modules.results.actions.saveResult(result)),
   onDeleteResult: (toRemove) => dispatch({ type: modules.results.actions.DELETE_RESULT, toRemove }),
 });
 
