@@ -32,7 +32,9 @@ const About = ({
             {results && results.map((res) => (
               <li key={res.id.toISOString()}>
                 {res.id.toString()} - {res.value}
-                <button type="button" onClick={removeResult(res.id)}>Delete Result</button>
+                <button type="button" onClick={removeResult(res.id)}>
+                  Delete Result
+                </button>
               </li>
             ))}
           </ul>
@@ -56,11 +58,14 @@ const mapStateToProps = (state) => ({
   results: state.res.results,
 });
 
+const { counter: { actions: counterActions } } = modules;
+const { results: { actions: resultsActions } } = modules;
+
 const mapDispatchToProps = (dispatch) => ({
-  onIncrement: () => dispatch({ type: modules.counter.actions.INC }),
-  addToCounter: () => dispatch({ type: modules.counter.actions.ADD, value: 10 }),
-  onSaveResult: (result) => dispatch(modules.results.actions.saveResult(result)),
-  onDeleteResult: (toRemove) => dispatch({ type: modules.results.actions.DELETE_RESULT, toRemove }),
+  onIncrement: () => dispatch({ type: counterActions.INC }),
+  addToCounter: () => dispatch({ type: counterActions.ADD, value: 10 }),
+  onSaveResult: (result) => dispatch(resultsActions.saveResult(result)),
+  onDeleteResult: (toRemove) => dispatch(resultsActions.thunkDeleteResult(toRemove)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
