@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
-import modules from '../../store/modules';
+import {
+  counter as reduxCounter,
+  results as reduxResults,
+} from '../../store/ducks';
 
 const About = ({
   results, counter, addToCounter, onIncrement, onSaveResult, onDeleteResult,
@@ -54,18 +57,15 @@ About.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  counter: state.ctr.counter,
-  results: state.res.results,
+  counter: state.counter.counter,
+  results: state.results.results,
 });
 
-const { counter: { actions: counterActions } } = modules;
-const { results: { actions: resultsActions } } = modules;
-
 const mapDispatchToProps = (dispatch) => ({
-  onIncrement: () => dispatch({ type: counterActions.INC }),
-  addToCounter: () => dispatch({ type: counterActions.ADD, value: 10 }),
-  onSaveResult: (result) => dispatch(resultsActions.saveResult(result)),
-  onDeleteResult: (toRemove) => dispatch(resultsActions.thunkDeleteResult(toRemove)),
+  onIncrement: () => dispatch({ type: reduxCounter.INC }),
+  addToCounter: () => dispatch({ type: reduxCounter.ADD, value: 10 }),
+  onSaveResult: (result) => dispatch(reduxResults.saveResult(result)),
+  onDeleteResult: (toRemove) => dispatch(reduxResults.thunkDeleteResult(toRemove)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

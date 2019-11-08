@@ -25,3 +25,9 @@ A react playground.
   - [Colorguard](https://github.com/SlexAxton/css-colorguard)
   - [Inline svg](https://github.com/TrySound/postcss-inline-svg)
   - [Easing gradients](https://github.com/larsenwork/postcss-easing-gradients)
+
+## Redux
+
+### Info
+
+- [Use of bindactionscreators on react-redux](https://stackoverflow.com/questions/41754489/when-would-bindactioncreators-be-used-in-react-redux)
