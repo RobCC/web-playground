@@ -1,17 +1,20 @@
-import * as actions from './actions';
+// Actions
+export const INC = 'INC';
+export const ADD = 'ADD';
 
 const initialState = {
   counter: 0,
 };
 
-const reducer = (state = initialState, action) => {
+// Reducer
+export default (state = initialState, action) => {
   switch (action.type) {
-    case actions.INC:
+    case INC:
       return {
         ...state,
         counter: state.counter + 1,
       };
-    case actions.ADD:
+    case ADD:
       return {
         ...state,
         counter: state.counter + action.value,
@@ -20,5 +23,3 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default reducer;
