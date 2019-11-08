@@ -23,3 +23,12 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export const increaseCounter = () => ({
+  type: INC,
+});
+
+export const addCounter = (n) => ({
+  type: ADD,
+  value: n,
+});

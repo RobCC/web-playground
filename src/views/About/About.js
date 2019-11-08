@@ -8,14 +8,18 @@ import {
 } from '../../store/ducks';
 
 const About = ({
-  results, counter, addToCounter, onIncrement, onSaveResult, onDeleteResult,
+  results, counter, addCounter, increaseCounter, saveResult, deleteResult,
 }) => {
-  const removeResult = (id) => () => {
-    onDeleteResult(id);
+  const onDeleteClick = (id) => () => {
+    deleteResult(id);
   };
 
-  const storeResult = (n) => () => {
-    onSaveResult(n);
+  const onSaveClick = (n) => () => {
+    saveResult(n);
+  };
+
+  const onAddMore = () => {
+    addCounter(10);
   };
 
   return (
@@ -24,18 +28,18 @@ const About = ({
 
       <div>
         Store counter: {counter}
-        <button type="button" onClick={onIncrement}>Increase store counter</button>
-        <button type="button" onClick={addToCounter}>Add more</button>
+        <button type="button" onClick={increaseCounter}>Increase store counter</button>
+        <button type="button" onClick={onAddMore}>Add more</button>
 
         <hr />
 
         <div>
-          <button type="button" onClick={storeResult(counter)}>Save Result</button>
+          <button type="button" onClick={onSaveClick(counter)}>Save Result</button>
           <ul>
             {results && results.map((res) => (
               <li key={res.id.toISOString()}>
                 {res.id.toString()} - {res.value}
-                <button type="button" onClick={removeResult(res.id)}>
+                <button type="button" onClick={onDeleteClick(res.id)}>
                   Delete Result
                 </button>
               </li>
@@ -48,12 +52,12 @@ const About = ({
 };
 
 About.propTypes = {
-  addToCounter: PropTypes.func,
+  addCounter: PropTypes.func,
   counter: PropTypes.number,
   results: PropTypes.arrayOf(PropTypes.any),
-  onIncrement: PropTypes.func,
-  onSaveResult: PropTypes.func,
-  onDeleteResult: PropTypes.func,
+  increaseCounter: PropTypes.func,
+  saveResult: PropTypes.func,
+  deleteResult: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
@@ -61,11 +65,11 @@ const mapStateToProps = (state) => ({
   results: state.results.results,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  onIncrement: () => dispatch({ type: reduxCounter.INC }),
-  addToCounter: () => dispatch({ type: reduxCounter.ADD, value: 10 }),
-  onSaveResult: (result) => dispatch(reduxResults.saveResult(result)),
-  onDeleteResult: (toRemove) => dispatch(reduxResults.thunkDeleteResult(toRemove)),
-});
+const mapDispatchToProps = {
+  increaseCounter: reduxCounter.increaseCounter,
+  addCounter: reduxCounter.addCounter,
+  saveResult: reduxResults.saveResult,
+  deleteResult: reduxResults.thunkDeleteResult,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
