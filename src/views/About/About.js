@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
+import styles from './about.scss';
+
 import {
   counter as reduxCounter,
   results as reduxResults,
@@ -37,8 +39,8 @@ export const About = ({
           <button type="button" onClick={onSaveClick(counter)}>Save Result</button>
           <ul>
             {results && results.map((res) => (
-              <li key={res.id.toISOString()}>
-                {res.id.toString()} - {res.value}
+              <li key={res.id.toISOString()} className={styles.item}>
+                <b>Date</b>: {res.id.toString()} - <b>Counter Snapshot</b>: {res.value}
                 <button type="button" onClick={onDeleteClick(res.id)}>
                   Delete Result
                 </button>

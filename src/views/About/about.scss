@@ -1,0 +1,18 @@
+li.item {
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 3px 2px #ccc;
+
+  button {
+    margin: 0 20px;
+    background: #333;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
