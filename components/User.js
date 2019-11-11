@@ -6,7 +6,7 @@ const User = ({ name, age }) => (
     <h1>{name}</h1>
     <p>Age: {age}</p>
     <style jsx>{`
-      div.user {
+      div {
         border: 1px solid #eee;
         box-shadow: 0 2px 3px #ccc;
         font-family: sans-serif;
