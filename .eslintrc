@@ -8,6 +8,7 @@
   "rules": {
     "max-len": ["error", { "code": 90, "tabWidth": 2, "comments": 80 }],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-named-as-default": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-props-no-spreading": 0,
     "react/require-default-props": 0,
