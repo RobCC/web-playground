@@ -61,8 +61,8 @@ About.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  counter: state.counter.counter,
-  results: state.results.results,
+  counter: reduxCounter.getCounter(state),
+  results: reduxResults.getResults(state),
 });
 
 const mapDispatchToProps = {

@@ -24,6 +24,7 @@ export default (state = initialState, action) => {
   }
 };
 
+// Action Creators
 export const increaseCounter = () => ({
   type: INC,
 });
@@ -32,3 +33,9 @@ export const addCounter = (n) => ({
   type: ADD,
   value: n,
 });
+
+// Selectors
+
+const getRoot = (state) => state.counter;
+
+export const getCounter = (state) => getRoot(state).counter;

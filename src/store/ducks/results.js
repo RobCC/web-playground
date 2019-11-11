@@ -35,7 +35,20 @@ export const deleteResult = (toRemove) => ({
   type: DELETE_RESULT,
 });
 
-export const thunkDeleteResult = (toRemove) => (dispatch) => setTimeout(
-  () => dispatch(deleteResult(toRemove)),
+/*  eslint-disable no-console */
+export const thunkDeleteResult = (toRemove) => (dispatch, getState) => setTimeout(
+  () => {
+    const { counter } = getState().counter;
+
+    console.log('Old counter', counter);
+
+    return dispatch(deleteResult(toRemove));
+  },
   500,
 );
+
+// Selectors
+
+const getRoot = (state) => state.results;
+
+export const getResults = (state) => getRoot(state).results;
