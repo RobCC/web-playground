@@ -7,7 +7,7 @@ import {
   results as reduxResults,
 } from '../../store/ducks';
 
-const About = ({
+export const About = ({
   results, counter, addCounter, increaseCounter, saveResult, deleteResult,
 }) => {
   const onDeleteClick = (id) => () => {
