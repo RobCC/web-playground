@@ -16,6 +16,6 @@ describe('<About />', () => {
   });
 
   it('should render correctly', () => {
-    expect(wrapper.find('ul')).toHaveLength(1);
+    expect(wrapper.find('div')).toHaveLength(5);
   });
 });
