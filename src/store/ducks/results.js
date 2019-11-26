@@ -47,8 +47,19 @@ export const thunkDeleteResult = (toRemove) => (dispatch, getState) => setTimeou
   500,
 );
 
-// Selectors
+/**
+ * import { put } from 'redux-saga/effects';
+ * export const deleteResultSaga = function* (toRemove) {
+ *  yield console.log('Here your side effects');
+ *  yield put({ toRemove, type: DELETE_RESULT });
+ * }
+ *
+ * ...
+ * sagaMiddleware = createSagaMiddleware();
+ * sagaMiddleware.run(...)
+ */
 
+// Selectors
 const getRoot = (state) => state.results;
 
 export const getResults = (state) => getRoot(state).results;
