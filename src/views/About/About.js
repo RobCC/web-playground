@@ -6,6 +6,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import styles from './about.scss';
+import useHttp from '#/hooks/http';
 
 import {
   counter as reduxCounter,
@@ -17,6 +18,7 @@ export const About = ({
   results, counter, addCounter, increaseCounter, saveResult, deleteResult,
 }) => {
   const [block, setBlock] = useState(false);
+  const { dummyRequest, loading } = useHttp();
 
   const onDeleteClick = (id) => () => {
     deleteResult(id);
@@ -115,6 +117,13 @@ export const About = ({
               }}
             />
           </CSSTransition>
+        </div>
+
+        <div>
+          {loading}
+          <button type="button" onClick={() => dummyRequest()}>
+            Send request
+          </button>
         </div>
       </div>
     </div>

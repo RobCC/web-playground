@@ -2,6 +2,11 @@
 
 A react playground.
 
+## Babel
+
+- [Running asyc/await is causing error](https://stackoverflow.com/questions/53558916/babel-7-referenceerror-regeneratorruntime-is-not-defined)
+- [Babel + Regenerator runtime(https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined)
+
 ## Webpack
 
 ### Tools

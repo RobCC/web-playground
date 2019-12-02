@@ -1,12 +1,7 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
 import { About } from './About';
-
-configure({
-  adapter: new Adapter(),
-});
 
 describe('<About />', () => {
   let wrapper;
@@ -16,6 +11,6 @@ describe('<About />', () => {
   });
 
   it('should render correctly', () => {
-    expect(wrapper.find('div')).toHaveLength(5);
+    expect(wrapper.find('div')).toHaveLength(6);
   });
 });

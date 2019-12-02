@@ -23,9 +23,12 @@
     "url": "https://github.com/RobCC/web-playground/issues"
   },
   "jest": {
+    "setupFilesAfterEnv": ["<rootDir>/config/jest/setup.js"],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js",
-      "\\.(css|less|scss)$": "identity-obj-proxy"
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^~/(.*)": "<rootDir>/$1",
+      "^#/(.*)": "<rootDir>/src/$1"
     }
   },
   "homepage": "https://github.com/RobCC/web-playground#readme",
@@ -48,6 +51,7 @@
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-formatter-pretty": "^2.1.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -74,6 +78,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "core-js": "^3.4.7",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -83,6 +88,7 @@
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.3"
   }
 }

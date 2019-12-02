@@ -6,6 +6,7 @@ import App from './components/App/App';
 import store from './store/store';
 
 import './index.scss';
+// import AuthContextProvider from './context/auth-context';
 
 const insertRoot = () => {
   const root = document.createElement('div');
