@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import Transition from 'react-transition-group/Transition';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
@@ -15,10 +15,11 @@ import {
 
 /*  eslint-disable no-console */
 export const About = ({
-  results, counter, addCounter, increaseCounter, saveResult, deleteResult,
+  results, addCounter, increaseCounter, saveResult, deleteResult,
 }) => {
   const [block, setBlock] = useState(false);
   const { dummyRequest, loading } = useHttp();
+  const counter = useSelector((state) => reduxCounter.getCounter(state));
 
   const onDeleteClick = (id) => () => {
     deleteResult(id);
@@ -120,7 +121,7 @@ export const About = ({
         </div>
 
         <div>
-          {loading}
+          Loading: {`${loading}`}
           <button type="button" onClick={() => dummyRequest()}>
             Send request
           </button>
@@ -132,7 +133,6 @@ export const About = ({
 
 About.propTypes = {
   addCounter: PropTypes.func,
-  counter: PropTypes.number,
   results: PropTypes.arrayOf(PropTypes.any),
   increaseCounter: PropTypes.func,
   saveResult: PropTypes.func,
@@ -140,7 +140,6 @@ About.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  counter: reduxCounter.getCounter(state),
   results: reduxResults.getResults(state),
 });
 
