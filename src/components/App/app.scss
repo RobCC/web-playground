@@ -1,0 +1,17 @@
+.menu {
+  background: linear-gradient(177deg, #caa28e, #458ae0);
+  border-radius: 3px;
+  list-style-type: none;
+  padding: 15px 0;
+
+  li {
+    display: inline;
+    margin: 0 25px;
+    font-size: 18px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
