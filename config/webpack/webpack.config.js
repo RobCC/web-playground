@@ -78,7 +78,9 @@ module.exports = ({ NODE_ENV }) => ({
     new StyleLintPlugin({
       formatter: StyleLintFormatter,
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
     new MiniCssExtractPlugin({ filename: 'index.css' }),
   ],
 });
