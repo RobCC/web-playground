@@ -36,3 +36,5 @@ A react playground.
 ### Info
 
 - [Use of bindactionscreators on react-redux](https://stackoverflow.com/questions/41754489/when-would-bindactioncreators-be-used-in-react-redux)
+
+- [Hooks](https://react-redux.js.org/next/api/hooks)
