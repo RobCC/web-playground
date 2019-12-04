@@ -23,7 +23,9 @@
     "url": "https://github.com/RobCC/web-playground/issues"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/config/jest/setup.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/jest/setup.js"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy",
@@ -78,6 +80,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.7.1",
     "core-js": "^3.4.7",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
